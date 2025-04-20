@@ -1,12 +1,9 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  release:
+    types:
+      - created
   workflow_run:
     workflows: [ "golangci-lint" ]
     types:
@@ -14,6 +11,9 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: read
+      pull-requests: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -23,7 +23,9 @@ jobs:
         with:
           go-version: ">=1.24"
       - name: Build
-        run: make
+        run: |
+          make
+          ls -l bin
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:

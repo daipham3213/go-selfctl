@@ -22,5 +22,5 @@ questions in mind or just want to say hi!
 
 You can check out the source code at https://github.com/daipham3213/go-selfctl.git
 `
-	RegisterCommand("about", "about", HELP, TEMPLATE)
+	RegisterCommand("about", "ab", HELP, TEMPLATE)
 }
