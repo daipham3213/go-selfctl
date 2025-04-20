@@ -1,9 +1,6 @@
-name: Build
+name: build-binary
 
 on:
-  release:
-    types:
-      - created
   workflow_run:
     workflows: [ "golangci-lint" ]
     types:
@@ -23,9 +20,7 @@ jobs:
         with:
           go-version: ">=1.24"
       - name: Build
-        run: |
-          make
-          ls -la -R bin
+        run: make
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
