@@ -1,4 +1,4 @@
-module github.com/daipham3213/selfctl
+module github.com/daipham3213/go-selfctl
 
 go 1.24.2
 

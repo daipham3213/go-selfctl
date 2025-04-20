@@ -6,7 +6,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/daipham3213/selfctl/command"
+	"github.com/daipham3213/go-selfctl/command"
 	"github.com/urfave/cli/v3"
 )
 
@@ -14,7 +14,6 @@ type SelfCtl struct {
 	ctx      context.Context
 	logger   *slog.Logger
 	commands []command.Command
-	app      *cli.Command
 }
 
 func NewSelfCtl(ctx context.Context, logger slog.Logger) *SelfCtl {

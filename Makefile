@@ -9,10 +9,10 @@ build: build-$(MACH)
 
 # build for the specified architecture
 build-amd64:
-	GOARCH=amd64 GOOS=linux go build -o bin/$(MACH)/selfctl .
+	GOARCH=amd64 GOOS=linux go build -o bin/$(MACH)/selfctl main.go
 build-arm64:
-	GOARCH=arm64 GOOS=linux go build -o bin/$(MACH)/selfctl .
+	GOARCH=arm64 GOOS=linux go build -o bin/$(MACH)/selfctl main.go
 build-wasm:
-	GOOS=js GOARCH=wasm go build -o bin/$(MACH)/selfctl.wasm .
+	GOOS=js GOARCH=wasm go build -o bin/$(MACH)/selfctl.wasm main.go
 build-windows:
-	GOARCH=amd64 GOOS=windows go build -o bin/$(MACH)/selfctl.exe .
+	GOARCH=amd64 GOOS=windows go build -o bin/$(MACH)/selfctl.exe main.go
